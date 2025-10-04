@@ -1,0 +1,319 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: SLL 000
+      id: sll-000
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: SLL 000
+        setup-command: g++ sll.cpp -o a.out
+        command: "./a.out 000"
+        input: ''
+        expected-output: '0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: SLL 001
+      id: sll-001
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: SLL 001
+        setup-command: g++ sll.cpp -o a.out
+        command: "./a.out 001"
+        input: ''
+        expected-output: '0 1 2 3 4'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: SLL 002
+      id: sll-002
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: SLL 002
+        setup-command: g++ sll.cpp -o a.out
+        command: "./a.out 002"
+        input: ''
+        expected-output: '0 1 2 3 4'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: SLL 003
+      id: sll-003
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: SLL 003
+        setup-command: g++ sll.cpp -o a.out
+        command: "./a.out 003"
+        input: ''
+        expected-output: '0 1 2 3 4'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: SLL 004
+      id: sll-004
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: SLL 004
+        setup-command: g++ sll.cpp -o a.out
+        command: "./a.out 004"
+        input: ''
+        expected-output: '1 2 3 4'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: SLL 005
+      id: sll-005
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: SLL 005
+        setup-command: g++ sll.cpp -o a.out
+        command: "./a.out 005"
+        input: ''
+        expected-output: '0 1 2 3'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: SLL 006
+      id: sll-006
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: SLL 006
+        setup-command: g++ sll.cpp -o a.out
+        command: "./a.out 006"
+        input: ''
+        expected-output: '0 1 3 4'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: SLL 007
+      id: sll-007
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: SLL 007
+        setup-command: g++ sll.cpp -o a.out
+        command: "./a.out 007"
+        input: ''
+        expected-output: 'Found 2 at index: 2'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: SLL 008
+      id: sll-008
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: SLL 008
+        setup-command: g++ sll.cpp -o a.out
+        command: "./a.out 008"
+        input: ''
+        expected-output: '5 does not exist in the list'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 000
+      id: dll-000
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 000
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 000"
+        input: ''
+        expected-output: '0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 001
+      id: dll-001
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 001
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 001"
+        input: ''
+        expected-output: '0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 002
+      id: dll-002
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 002
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 002"
+        input: ''
+        expected-output: '0 1 2 3 4'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 003
+      id: dll-003
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 003
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 003"
+        input: ''
+        expected-output: '4 3 2 1 0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 004
+      id: dll-004
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 004
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 004"
+        input: ''
+        expected-output: '0 1 2 3 4'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 005
+      id: dll-005
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 005
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 005"
+        input: ''
+        expected-output: '0 1 2 3 4'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 006
+      id: dll-006
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 006
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 006"
+        input: ''
+        expected-output: '1 2 3 4'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 007
+      id: dll-007
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 007
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 007"
+        input: ''
+        expected-output: '4 3 2 1'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 008
+      id: dll-008
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 008
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 008"
+        input: ''
+        expected-output: '0 1 2 3'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 009
+      id: dll-009
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 009
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 009"
+        input: ''
+        expected-output: '3 2 1 0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 010
+      id: dll-010
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 010
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 010"
+        input: ''
+        expected-output: '0 1 3 4'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 011
+      id: dll-011
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 011
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 011"
+        input: ''
+        expected-output: '4 3 1 0'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 012
+      id: dll-012
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 012
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 012"
+        input: ''
+        expected-output: 'Found 2 at index: 2'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: DLL 013
+      id: dll-013
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: DLL 013
+        setup-command: g++ dll.cpp -o a.out
+        command: "./a.out 013"
+        input: ''
+        expected-output: '5 does not exist in the list'
+        comparison-method: exact
+        timeout: 1
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        SLL-000_RESULTS: "${{steps.sll-000.outputs.result}}"
+        SLL-001_RESULTS: "${{steps.sll-001.outputs.result}}"
+        SLL-002_RESULTS: "${{steps.sll-002.outputs.result}}"
+        SLL-003_RESULTS: "${{steps.sll-003.outputs.result}}"
+        SLL-004_RESULTS: "${{steps.sll-004.outputs.result}}"
+        SLL-005_RESULTS: "${{steps.sll-005.outputs.result}}"
+        SLL-006_RESULTS: "${{steps.sll-006.outputs.result}}"
+        SLL-007_RESULTS: "${{steps.sll-007.outputs.result}}"
+        SLL-008_RESULTS: "${{steps.sll-008.outputs.result}}"
+        DLL-000_RESULTS: "${{steps.dll-000.outputs.result}}"
+        DLL-001_RESULTS: "${{steps.dll-001.outputs.result}}"
+        DLL-002_RESULTS: "${{steps.dll-002.outputs.result}}"
+        DLL-003_RESULTS: "${{steps.dll-003.outputs.result}}"
+        DLL-004_RESULTS: "${{steps.dll-004.outputs.result}}"
+        DLL-005_RESULTS: "${{steps.dll-005.outputs.result}}"
+        DLL-006_RESULTS: "${{steps.dll-006.outputs.result}}"
+        DLL-007_RESULTS: "${{steps.dll-007.outputs.result}}"
+        DLL-008_RESULTS: "${{steps.dll-008.outputs.result}}"
+        DLL-009_RESULTS: "${{steps.dll-009.outputs.result}}"
+        DLL-010_RESULTS: "${{steps.dll-010.outputs.result}}"
+        DLL-011_RESULTS: "${{steps.dll-011.outputs.result}}"
+        DLL-012_RESULTS: "${{steps.dll-012.outputs.result}}"
+        DLL-013_RESULTS: "${{steps.dll-013.outputs.result}}"
+      with:
+        runners: sll-000,sll-001,sll-002,sll-003,sll-004,sll-005,sll-006,sll-007,sll-008,dll-000,dll-001,dll-002,dll-003,dll-004,dll-005,dll-006,dll-007,dll-008,dll-009,dll-010,dll-011,dll-012,dll-013
