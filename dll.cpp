@@ -22,6 +22,8 @@ public:
 
 	void print();
 	void printInReverse();
+	
+	void reverse();
 };
 
 int main(int argc, char** argv)
