@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include<list>
 using namespace std;
 
 class Node;
@@ -8,8 +7,6 @@ class Node;
 class SinglyLinkedList
 {
 	Node* head = NULL;
-
-    list<int> a;
 
 public:
 
@@ -24,6 +21,8 @@ public:
 	int search(int data);
 
 	void print();
+
+	void reverse();
 };
 
 int main(int argc, char** argv)
@@ -145,7 +144,6 @@ class Node
 {
 	int data;
 	Node* next = NULL;
-	Node* prev = NULL;
 
 public:
 
@@ -170,11 +168,6 @@ public:
 		return next;
 	}
 
-	Node* getPrev()
-	{
-		return prev;
-	}
-
 	void setData(int data)
 	{
 		this->data = data;
@@ -185,21 +178,11 @@ public:
 		this->next = next;
 	}
 
-	void setPrev(Node* prev)
-	{
-		this->prev = prev;
-	}
 };
 
-bool SinglyLinkedList::insertAtIndex(int index, int data)
-{
-	a.push_back(data);
-}
+bool SinglyLinkedList::insertAtIndex(int index, int data) {}
 
-void SinglyLinkedList::insertAtBeginning(int data)
-{
-	a.push_front(data);
-}
+void SinglyLinkedList::insertAtBeginning(int data) {}
 void SinglyLinkedList::insertAtEnd(int data) {}
 
 bool SinglyLinkedList::deleteAtIndex(int index) {}
@@ -208,9 +191,4 @@ void SinglyLinkedList::deleteAtEnd() {}
 
 int SinglyLinkedList::search(int data) {}
 
-void SinglyLinkedList::print()
-{
-	for (auto i : a) cout << i << " ";
-	
-	cout << "\n";
-}
+void SinglyLinkedList::print() {}
